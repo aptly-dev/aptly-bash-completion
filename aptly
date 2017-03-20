@@ -500,7 +500,7 @@ _aptly()
           "snapshot"|"repo")
             if [[ $numargs -eq 0 ]]; then
               if [[ "$cur" == -* ]]; then
-                COMPREPLY=($(compgen -W "-batch -force-overwrite -distribution= -component= -gpg-key= -keyring= -label= -origin= -passphrase= -passphrase-file= -secret-keyring= -skip-contents -skip-signing" -- ${cur}))
+                COMPREPLY=($(compgen -W "-batch -force-overwrite -distribution= -component= -gpg-key= -keyring= -label= -origin= -passphrase= -passphrase-file= -secret-keyring= -skip-contents -skip-signing -use-symlinks" -- ${cur}))
               else
                 if [[ "$subcmd" == "snapshot" ]]; then
                   COMPREPLY=($(compgen -W "$(__aptly_snapshot_list)" -- ${cur}))
@@ -525,7 +525,7 @@ _aptly()
           "update")
             if [[ $numargs -eq 0 ]]; then
               if [[ "$cur" == -* ]]; then
-                COMPREPLY=($(compgen -W "-batch -force-overwrite -gpg-key= -keyring= -passphrase= -passphrase-file= -secret-keyring= -skip-contents -skip-signing" -- ${cur}))
+                COMPREPLY=($(compgen -W "-batch -force-overwrite -gpg-key= -keyring= -passphrase= -passphrase-file= -secret-keyring= -skip-contents -skip-signing -use-symlinks" -- ${cur}))
               else
                 COMPREPLY=($(compgen -W "$(__aptly_published_distributions)" -- ${cur}))
               fi
@@ -540,7 +540,7 @@ _aptly()
           "switch")
             if [[ $numargs -eq 0 ]]; then
               if [[ "$cur" == -* ]]; then
-                COMPREPLY=($(compgen -W "-batch -force-overwrite -component= -gpg-key= -keyring= -passphrase= -passphrase-file= -secret-keyring= -skip-contents -skip-signing" -- ${cur}))
+                COMPREPLY=($(compgen -W "-batch -force-overwrite -component= -gpg-key= -keyring= -passphrase= -passphrase-file= -secret-keyring= -skip-contents -skip-signing -use-symlinks" -- ${cur}))
               else
                 COMPREPLY=($(compgen -W "$(__aptly_published_distributions)" -- ${cur}))
               fi
